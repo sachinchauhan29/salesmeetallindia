@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for hiding the div initially */
+        #result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <title>Dropdown Show/Hide</title>
+</head>
+
+<body>
+
+    <!-- Dropdowns -->
+    <label for="dropdown1">Select Option 1:</label>
+    <select id="dropdown1">
+        <option value="">Select...</option>
+        <option value="option1a">Option 1A</option>
+    </select>
+
+    <label for="dropdown2">Select Option 2:</label>
+    <select id="dropdown2">
+        <option value="">Select...</option>
+        <option value="option2a">Option 2A</option>
+    </select>
+
+    <!-- Result div -->
+    <div id="result">
+        <p>This is the result div.</p>
+    </div>
+
+    <script>
+        function handleDropdownChange() {
+            var dropdown1Value = document.getElementById("dropdown1").value;
+            var dropdown2Value = document.getElementById("dropdown2").value;
+            if (dropdown1Value !== "" && dropdown2Value !== "") {
+                document.getElementById("result").style.display = "block";
+            } else {
+                document.getElementById("result").style.display = "none";
+            }
+        }
+        document.getElementById("dropdown1").addEventListener("change", handleDropdownChange);
+        document.getElementById("dropdown2").addEventListener("change", handleDropdownChange);
+    </script>
+
+</body>
+
+</html>
